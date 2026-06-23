@@ -1,0 +1,21 @@
+Sample	Total number of single-base substitutions
+BT16_cisplatin	16106
+BT16_doxorubicin	3797
+PEDS0005_T1_cisplatin	16303
+PEDS0005_T1_doxorubicin	1023
+CHLA-06-ATRT_doxorubicin	9443
+PEDS9001_T1_doxorubicin	1855
+HepG2_cisplatin_1	20926
+HepG2_cisplatin_2	20937
+HepG2_cisplatin_3	22260
+HepG2_cisplatin_4	15411
+HepG2_doxorubicin_clone1	16739
+HepG2_doxorubicin_clone2	5074
+MCF10A_cisplatin_1	4795
+MCF10A_cisplatin_2	10380
+MCF10A_cisplatin_3	6481
+MCF10A_cisplatin_4	11618
+MCF10A_cisplatin_5	12890
+MCF10A_cisplatin_6	11097
+MCF10A_doxorubicin_clone1	2086
+MCF10A_doxorubicin_clone2	1985

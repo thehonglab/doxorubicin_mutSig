@@ -1,0 +1,3 @@
+Sample ID	Cancer type	Cisplatin mSigAct p-value	SBS-Doxorubicin-1 (-PEDS0005_T1) mSigAct p-value	SBS-Doxorubicin-2 mSigAct p-value
+PEDS0005_T2A	RMC	1.1e-52	6.73e-79	2.86e-86
+PEDS0005_T2B	RMC	7.22e-62	3.64e-73	2.52e-88

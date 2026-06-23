@@ -1,0 +1,9 @@
+Sample	Number of missense variants	Number of nonsense variants	Number of synonymous variants
+BT16_doxorubicin	16	4	6
+PEDS0005_T1_doxorubicin	7	0	1
+HepG2_doxorubicin_clone2	33	5	7
+MCF10A_doxorubicin_clone1	6	0	3
+MCF10A_doxorubicin_clone2	9	1	2
+CHLA-06-ATRT_doxorubicin	31	1	18
+PEDS9001_T1_doxorubicin	15	0	2
+HepG2_doxorubicin_clone1	28	2	12

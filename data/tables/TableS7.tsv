@@ -1,0 +1,9 @@
+Sample	Percent intergenic mutations (%)	Percent gene-associated non-coding mutations (%)	Percentage coding mutations (%)
+BT16_doxorubicin	63.9	35.4	0.685
+PEDS0005_T1_doxorubicin	63	36.2	0.782
+HepG2_doxorubicin_clone2	65.4	33.7	0.887
+MCF10A_doxorubicin_clone1	61.6	37.9	0.431
+MCF10A_doxorubicin_clone2	60.7	38.7	0.605
+CHLA-06-ATRT_doxorubicin	63.4	36	0.572
+PEDS9001_T1_doxorubicin	60.8	38.3	0.916
+HepG2_doxorubicin_clone1	72.2	27.5	0.251

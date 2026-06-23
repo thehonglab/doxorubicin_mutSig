@@ -1,0 +1,9 @@
+Sample	Number of intron variants	Number of promoter variants	Number of 3'UTR variants	Number of 5'UTR variants	Number of splice site variants
+BT16_doxorubicin	1275	30	23	3	1
+PEDS0005_T1_doxorubicin	354	7	4	2	0
+HepG2_doxorubicin_clone2	1616	37	39	6	0
+MCF10A_doxorubicin_clone1	729	22	26	1	0
+MCF10A_doxorubicin_clone2	714	20	16	1	0
+CHLA-06-ATRT_doxorubicin	3214	72	65	6	5
+PEDS9001_T1_doxorubicin	668	13	21	4	0
+HepG2_doxorubicin_clone1	4448	61	48	6	0
