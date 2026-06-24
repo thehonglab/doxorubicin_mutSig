@@ -48,7 +48,7 @@ dragen -f -r GrCh38p13 -1 WGS/SAMPLE_1.fq.gz \
 --RGSM SAMPLE_1 \
 --output-directory WGSOut \
 --output-file-prefix SAMPLE \
- --enable-map-align true \
+--enable-map-align true \
 --enable-duplicate-marking true \
 --enable-map-align-output true \
 --enable-cnv false \
@@ -57,6 +57,8 @@ dragen -f -r GrCh38p13 -1 WGS/SAMPLE_1.fq.gz \
 ```
 
 BAM files output from the above step have been deposited to the database of Genotypes and Phenotypes (dbGaP) under the accession number: phs004740.v1.p1
+
+#### Variant calling
 
 Next, using the BAM files as input, we performed variant calling. We did this is two ways:
 
@@ -73,6 +75,7 @@ dragen -f -r GrCh38p13 -b WGSOut/CONTROL.bam \
 2. Tumour-normal, where:
 - The drug exposed is the tumour 
 - The parental/non-treated is the normal
+
 This removes mutations found in the control samples (i.e., background) to isolate the mutations caused by the drug exposure
 
 ```
@@ -87,3 +90,82 @@ dragen -f -r GrCh38p13 --tumor-bam-input WGSOut/EXPOSED.bam \
 Hard-filtered VCFs output from the above two steps have been deposited to the database of Genotypes and Phenotypes (dbGaP) under the accession number: phs004740.v1.p1
 
 These VCFs were used as input to our pre-processing pipeline: scripts/pre-processing
+
+## Packages
+
+Listed below are R and python packages needed to complete data analysis, along with installation instructions.
+
+#### R packages:
+- vcfR
+```
+install.packages('vcfR')
+```
+
+- tidyverse
+```
+install.packages("tidyverse")
+```
+
+- argparser
+```
+install.packages("argparse")
+```
+
+- sigProcessor
+```
+install.packages("remotes")
+remotes::install_github("katieskinner98/sigProcessor")
+```
+
+- ggplotify
+```
+install.packages("ggplotify")
+```
+
+- indelsig.tools.lib
+```
+install.packages("devtools")
+devtools::install_github("Nik-Zainal-Group/indelsig.tools.lib")
+```
+
+- data.table
+```
+install.packages("data.table")
+```
+
+- mSigAct
+```
+install.packages("remotes")
+remotes::install_github("steverozen/mSigAct")
+
+- mSigTools
+```
+install.packages("mSigTools")
+```
+
+- cosmicsig
+```
+install.packages("cosmicsig")
+```
+ 
+#### Python packages:
+
+- SigProfilerMatrixGenerator
+```
+pip install SigProfilerMatrixGenerator
+```
+
+- SigProfilerPlotting
+```
+pip install SigProfilerPlotting
+```
+
+- SigProfilerAssignment
+```
+pip install SigProfilerAssignment
+```
+
+- SigProfilerTopography
+```
+pip install SigProfilerTopography
+```
