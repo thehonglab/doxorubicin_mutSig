@@ -2,9 +2,9 @@
 
 This repository contains all code and data associated with the manuscript "Derivation of doxorubicin mutational signatures in cancer", Skinner et al., 2026, submitted to Genome Research. 
 
-## Repository contents:
+## Repository contents
 
-### Data:
+#### Data
 - Mutational matrices for the specified groups of samples:
 	- SBS6 (doxorubicin)
 	- SBS96 (background, cisplatin, doxorubicin, patient profiles, and patient exposures)
@@ -17,21 +17,73 @@ This repository contains all code and data associated with the manuscript "Deriv
 
 - Table data (main and supplemental)
 
+#### Scripts
+- Variant filtering and mutational matrices generation (scripts/pre-processing)
 
-### Scripts:
-- Variant filtering (sample pre-processing)
-
-- R scripts for plotting:
+- R scripts for plotting (scripts/figures):
 	- Cosine similarities
 	- Hierarchical clustering
 	- SBS6 bar charts
 	- SigProfilerAssignment activities output
 	- ID30 mutational profiles
 
-- Python scripts for plotting:
+- Python scripts for plotting (scripts/figures):
 	- SBS96 mutational profiles
 	- DBS78 mutational profiles
 
-- R scripts for generating all data in tables (main and supplemental)
+- R scripts for generating all data in tables (main and supplemental) (scripts/tables)
 
-- Additional functions used for processing and plotting of INDEL data
+- Additional functions used for processing and plotting of INDEL data (scripts/additional_functions)
+
+## Processing raw data
+
+#### Genome alignment 
+
+We aligned FASTQ files to GrCh38p13 using Illumina DRAGEN v4.4.4.f2:
+
+```
+dragen -f -r GrCh38p13 -1 WGS/SAMPLE_1.fq.gz \
+-2 WGS/SAMPLE_2.fq.gz \
+--RGID SAMPLE \
+--RGSM SAMPLE_1 \
+--output-directory WGSOut \
+--output-file-prefix SAMPLE \
+ --enable-map-align true \
+--enable-duplicate-marking true \
+--enable-map-align-output true \
+--enable-cnv false \
+--enable-variant-caller false \
+--validate-pangenome-reference=false
+```
+
+BAM files output from the above step have been deposited to the database of Genotypes and Phenotypes (dbGaP) under the accession number: phs004740.v1.p1
+
+Next, using the BAM files as input, we performed variant calling. We did this is two ways:
+
+1. Tumour-only, to characterise the background mutational profiles of all parental and non-treated samples:
+
+```
+dragen -f -r GrCh38p13 -b WGSOut/CONTROL.bam \
+--enable-variant-caller true \
+--output-directory VCFs \
+--output-file-prefix CONTROL \
+--enable-map-align false
+```
+
+2. Tumour-normal, where:
+- The drug exposed is the tumour 
+- The parental/non-treated is the normal
+This removes mutations found in the control samples (i.e., background) to isolate the mutations caused by the drug exposure
+
+```
+dragen -f -r GrCh38p13 --tumor-bam-input WGSOut/EXPOSED.bam \
+-b WGSOut/CONTROL.bam \
+--enable-variant-caller true \
+--output-directory VCFs \
+--output-file-prefix SAMPLE_withCONTROL \
+--enable-map-align false
+```
+
+Hard-filtered VCFs output from the above two steps have been deposited to the database of Genotypes and Phenotypes (dbGaP) under the accession number: phs004740.v1.p1
+
+These VCFs were used as input to our pre-processing pipeline: scripts/pre-processing
