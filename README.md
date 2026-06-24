@@ -137,6 +137,7 @@ install.packages("data.table")
 ```
 install.packages("remotes")
 remotes::install_github("steverozen/mSigAct")
+```
 
 - mSigTools
 ```
