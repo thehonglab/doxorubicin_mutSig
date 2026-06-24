@@ -4,7 +4,7 @@ This repository contains all code and data associated with the manuscript "Deriv
 
 ## Repository contents:
 
-1. Data:
+### Data:
 - Mutational matrices for the specified groups of samples:
 	- SBS6 (doxorubicin)
 	- SBS96 (background, cisplatin, doxorubicin, patient profiles, and patient exposures)
@@ -18,7 +18,7 @@ This repository contains all code and data associated with the manuscript "Deriv
 - Table data (main and supplemental)
 
 
-2. Scripts:
+### Scripts:
 - Variant filtering (sample pre-processing)
 
 - R scripts for plotting:
