@@ -56,7 +56,7 @@ dragen -f -r GrCh38p13 -1 WGS/SAMPLE_1.fq.gz \
 --validate-pangenome-reference=false
 ```
 
-BAM files output from the above step have been deposited to the database of Genotypes and Phenotypes (dbGaP) under the accession number: phs004740.v1.p1
+BAM files output from the above step have been deposited to the database of Genotypes and Phenotypes (dbGaP) under the accession number: [phs004740.v1.p1](https://www.ncbi.nlm.nih.gov/projects/gapprev/gap/cgi-bin/study.cgi?study_id=phs004740.v1.p1)
 
 #### Variant calling
 
@@ -87,7 +87,7 @@ dragen -f -r GrCh38p13 --tumor-bam-input WGSOut/EXPOSED.bam \
 --enable-map-align false
 ```
 
-Hard-filtered VCFs output from the above two steps have been deposited to the database of Genotypes and Phenotypes (dbGaP) under the accession number: phs004740.v1.p1
+Hard-filtered VCFs output from the above two steps have been deposited to the database of Genotypes and Phenotypes (dbGaP) under the accession number: [phs004740.v1.p1](https://www.ncbi.nlm.nih.gov/projects/gapprev/gap/cgi-bin/study.cgi?study_id=phs004740.v1.p1)
 
 These VCFs were used as input to our pre-processing pipeline: scripts/pre-processing
 
